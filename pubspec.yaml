@@ -1,4 +1,4 @@
-name: bloc
+name: bloc_example
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -31,6 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   equatable: ^2.0.5
+  flutter_bloc: ^8.0.1
+  bloc: ^8.0.1
 
 
   # The following adds the Cupertino Icons font to your application.
