@@ -52,22 +52,26 @@ class _MultipleStatesState extends State<MultipleStates> {
                 width: double.maxFinite,
                 height: 200,
                 decoration: BoxDecoration(
-                    color: Colors.red.withOpacity(state.sliderValue)),
+                    color: Colors.red.withOpacity(state.sliderValue),
+                    borderRadius: BorderRadius.circular(10)),
               );
             }),
             SizedBox(
               height: 30,
             ),
-            BlocBuilder<SwitchBloc, SwitchState>(builder: (context, state) {
-              print("Slider");
-              return Slider(
-                  value: state.sliderValue,
-                  onChanged: (newValue) {
-                    context
-                        .read<SwitchBloc>()
-                        .add(EnableOrDisableSlider(sliderValue: newValue));
-                  });
-            })
+            BlocBuilder<SwitchBloc, SwitchState>(
+                buildWhen: (previous, current) =>
+                    previous.sliderValue != current.sliderValue,
+                builder: (context, state) {
+                  print("Slider");
+                  return Slider(
+                      value: state.sliderValue,
+                      onChanged: (newValue) {
+                        context
+                            .read<SwitchBloc>()
+                            .add(EnableOrDisableSlider(sliderValue: newValue));
+                      });
+                })
           ],
         ),
       ),
