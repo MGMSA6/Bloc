@@ -46,7 +46,7 @@ class _ToDoScreenState extends State<ToDoScreen> {
             context.read<TodoBloc>().add(AddTodoEvent(task: 'Task $i'));
           }
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

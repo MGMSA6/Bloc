@@ -1,4 +1,5 @@
 import 'package:bloc_example/blocs/switch_bloc/switch_bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,7 +34,9 @@ class _MultipleStatesState extends State<MultipleStates> {
                     buildWhen: (previous, current) =>
                         previous.isSwitch != current.isSwitch,
                     builder: (context, state) {
-                      print("Notification");
+                      if (kDebugMode) {
+                        print("Notification");
+                      }
                       return Switch(
                           value: state.isSwitch,
                           onChanged: (newValue) {
@@ -63,7 +66,9 @@ class _MultipleStatesState extends State<MultipleStates> {
                 buildWhen: (previous, current) =>
                     previous.sliderValue != current.sliderValue,
                 builder: (context, state) {
-                  print("Slider");
+                  if (kDebugMode) {
+                    print("Slider");
+                  }
                   return Slider(
                       value: state.sliderValue,
                       onChanged: (newValue) {
