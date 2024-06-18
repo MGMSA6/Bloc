@@ -6,7 +6,6 @@ import 'package:bloc_example/blocs/switch_bloc/switch_bloc.dart';
 import 'package:bloc_example/blocs/todo_bloc/todo_bloc.dart';
 import 'package:bloc_example/repository/favourite_repository.dart';
 import 'package:bloc_example/repository/post_repository.dart';
-import 'package:bloc_example/ui/favourite_screen.dart';
 import 'package:bloc_example/ui/post_screen.dart';
 import 'package:bloc_example/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';

@@ -29,7 +29,6 @@ class PostRepository {
     } on TimeoutException {
       throw Exception('');
     }
-
     throw Exception('error fetching data');
   }
 }
